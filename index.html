@@ -498,24 +498,127 @@
     z-index: 0;
   }
 
-  /* ── RESPONSIVE ── */
+  /* ── RESPONSIVE · TABLET ── */
   @media(max-width:900px){
-    nav { padding:18px 24px; }
+    /* nav */
+    nav { padding:16px 20px; }
     .nav-links { display:none; }
-    #hero, .wrap, .sec-head, .diag-intro, .meses-lead, .meses-grid,
-    .metodo-grid, .table-wrap, .nota, #investimento, #pratica, #closing, footer, .logo-stamp { padding-left:24px; padding-right:24px; }
-    .pain-grid { margin:0 24px; grid-template-columns:1fr; }
-    .meses-grid { grid-template-columns:1fr; padding:0 24px; }
-    .metodo-grid { grid-template-columns:1fr; margin:0 24px 48px; }
-    .nota { margin:0 24px; }
-    .hero-bottom { flex-direction:column; gap:32px; }
-    .pratica-layout { grid-template-columns:1fr; gap:40px; }
-    .inv-notes { flex-direction:column; gap:20px; }
-    .contacts { flex-direction:column; align-items:center; gap:28px; }
-    .divider-h { margin:0 24px; }
-    .sec-num { font-size:80px; }
-    .inv-total .v { font-size:28px; }
-    .inv-top { flex-direction:column; gap:20px; }
+
+    /* cursor — hide on touch */
+    #cur, #cur2 { display:none; }
+    body { cursor:auto; }
+
+    /* hero */
+    #hero { padding:80px 20px 64px; min-height:100svh; }
+    .hero-ghost { font-size:clamp(80px,40vw,220px); right:-4%; }
+    .hero-title { font-size:clamp(44px,11vw,80px); }
+    .hero-bottom { flex-direction:column; gap:28px; margin-top:32px; }
+    .hero-scroll { display:none; }
+
+    /* strips */
+    .strip { padding:14px 0; }
+
+    /* section headers */
+    .sec-head { padding:64px 20px 36px; flex-direction:column; gap:0; }
+    .sec-num { font-size:clamp(60px,16vw,120px); margin-top:0; margin-bottom:-12px; }
+    .sec-title { font-size:clamp(28px,7vw,48px); }
+
+    /* dividers */
+    .divider-h { margin:0 20px; }
+
+    /* layout paddings — universal */
+    .diag-intro  { padding:0 20px 40px; }
+    .meses-lead  { padding:0 20px 36px; }
+    .table-wrap  { padding:0 20px; }
+    .logo-stamp  { padding:36px 20px 0; }
+    #pratica     { padding:64px 20px; }
+    #investimento{ padding:64px 20px; }
+    #closing     { padding:80px 20px; }
+    footer       { padding:20px; }
+
+    /* pain grid — 1 col */
+    .pain-grid { margin:0 20px; grid-template-columns:1fr; }
+    .pain-card { padding:32px 28px; }
+
+    /* meses — 1 col */
+    .meses-grid { grid-template-columns:1fr; padding:0 20px; gap:12px; }
+
+    /* entregáveis table — stack on mobile */
+    .tbl-head { grid-template-columns:1fr; }
+    .tbl-head span:last-child { display:none; }
+    .tbl-row { grid-template-columns:1fr; gap:4px; padding:14px 20px; }
+    .tbl-row .fmt { text-align:left; font-size:11px; color:var(--hl-gold); }
+
+    /* metodo — 1 col */
+    .metodo-grid { grid-template-columns:1fr; margin:0 20px 40px; }
+    .metodo-card { padding:36px 28px; }
+    .nota { margin:0 20px; padding:28px 24px; }
+
+    /* investimento */
+    .inv-top { flex-direction:column; gap:16px; margin-bottom:36px; }
+    .inv-logo-block { display:none; }
+    .inv-row { grid-template-columns:1fr; gap:4px; padding:16px 0; }
+    .inv-row .v { font-size:16px; }
+    .inv-total { padding:20px 24px; }
+    .inv-total .v { font-size:26px; }
+    .inv-notes { flex-direction:column; gap:16px; margin-top:20px; }
+
+    /* pratica */
+    .pratica-layout { grid-template-columns:1fr; gap:36px; padding:0 20px 64px !important; }
+    .pratica-quote { padding:32px 28px; }
+    .pratica-quote blockquote { font-size:18px; }
+
+    /* closing */
+    .closing-title { font-size:clamp(28px,8vw,52px); }
+    .contacts { flex-direction:column; align-items:center; gap:24px; }
+    .contact-item a { font-size:13px; word-break:break-all; }
+  }
+
+  /* ── RESPONSIVE · MOBILE SMALL ── */
+  @media(max-width:480px){
+    nav { padding:14px 16px; }
+
+    #hero { padding:76px 16px 56px; }
+    .hero-title { font-size:clamp(38px,12vw,60px); }
+    .hero-ghost { opacity:.015; }
+
+    .sec-head { padding:52px 16px 28px; }
+    .sec-title { font-size:clamp(26px,8vw,40px); }
+
+    .diag-intro  { padding:0 16px 32px; }
+    .meses-lead  { padding:0 16px 28px; }
+    .table-wrap  { padding:0 16px; }
+    .logo-stamp  { padding:28px 16px 0; }
+    #pratica     { padding:52px 16px; }
+    #investimento{ padding:52px 16px; }
+    #closing     { padding:64px 16px; }
+    footer       { padding:16px; flex-direction:column; gap:8px; text-align:center; }
+
+    .pain-grid  { margin:0 16px; }
+    .pain-card  { padding:28px 20px; }
+    .pain-card h3 { font-size:16px; }
+
+    .meses-grid { padding:0 16px; gap:10px; }
+    .mes-hd { padding:20px 20px 16px; }
+    .mes-name { font-size:20px; }
+    .mes-body { padding:20px; }
+
+    .tbl-row { padding:12px 16px; }
+    .tbl-row .ent { font-size:13px; }
+
+    .metodo-grid { margin:0 16px 32px; }
+    .metodo-card { padding:28px 20px; }
+    .metodo-card h3 { font-size:22px; }
+    .nota { margin:0 16px; padding:24px 20px; }
+
+    .inv-total .v { font-size:22px; }
+    .pratica-layout { padding:0 16px 52px !important; gap:28px; }
+    .pratica-quote { padding:28px 20px; }
+    .pratica-quote blockquote { font-size:16px; }
+
+    .closing-title { font-size:clamp(26px,9vw,44px); }
+    .divider-h { margin:0 16px; }
+    .strip { margin:48px 0 !important; }
   }
 </style>
 </head>
